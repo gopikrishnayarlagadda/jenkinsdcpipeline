@@ -5,5 +5,7 @@ node('ltecomm') {
     stage('maven') {
         sh 'mvn clean package'
     }
-    
+    stage('archive artifacts') {
+        archive 'gameoflife-web/targets/gameoflife.war'
+    }
 }
